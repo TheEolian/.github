@@ -1,0 +1,21 @@
+# Copilot instructions for this repo
+
+- Prefer Python and PySpark for production-scale data processing.
+- Use meaningful SQL aliases; avoid single-letter aliases unless the query is very small.
+- Keep SQL keywords uppercase.
+- Never hardcode credentials, secrets, bucket keys, or connection details.
+- When explaining or modifying ETL logic, always identify:
+  - output grain
+  - business keys
+  - join keys
+  - deduplication logic
+  - null/default handling
+  - date filters
+- When proposing changes, preserve existing business behavior unless explicitly changing it.
+- For legacy logic, do not assume old scripts are correct; compare multiple references and call out conflicts.
+- Before write-back steps, propose validation checks:
+  - row counts
+  - distinct business key counts
+  - duplicate checks
+  - null-rate checks on key fields
+- Prefer repo files over guesses. If information is missing, say what evidence was used.
